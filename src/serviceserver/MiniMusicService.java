@@ -7,6 +7,7 @@ package serviceserver;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
@@ -29,11 +30,14 @@ import javax.swing.JPanel;
 class MiniMusicService implements Service{
 
     MyDrawPanel myPanel;
+    Font bigFont = new Font("Comic Sans", Font.BOLD, 30);
+
     
     public JPanel getGuiPanel(){
         JPanel mainPanel = new JPanel();
         myPanel = new MyDrawPanel();
         JButton playItButton = new JButton("Play It");
+        playItButton.setFont(bigFont);
         playItButton.addActionListener(new PlayItListener());
         mainPanel.add(myPanel);
         mainPanel.add(playItButton);

@@ -34,11 +34,7 @@ public class ServiceServerImpl extends UnicastRemoteObject implements ServiceSer
         serviceList.put("Dice Rolling Service", new DiceService());
         serviceList.put("Day of the Week Service", new DayOfTheWeekService());
         serviceList.put("Visual Music Service", new MiniMusicService());
-        Service srv = (Service) serviceList.get("Dice Rolling Service");
-        JFrame frame = new JFrame();
-        frame.getContentPane().add(srv.getGuiPanel());
-        frame.setSize(1000, 1500);
-        frame.setVisible(true);
+        
     }
     
     public Object[] getServiceList() {
@@ -62,5 +58,5 @@ public class ServiceServerImpl extends UnicastRemoteObject implements ServiceSer
         }
         System.out.println("Remote service is running");
     }
-    
+
 }

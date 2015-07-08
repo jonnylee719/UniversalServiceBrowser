@@ -57,9 +57,7 @@ public class ServiceBrowser {
     
     void loadService(Object serviceSelection){
         try{
-            System.out.println("Just before service is obtained.");
             Service svc = server.getService(serviceSelection);
-            System.out.println("Service Obtained");
             
             mainPanel.removeAll();
             mainPanel.add(svc.getGuiPanel());
@@ -73,18 +71,18 @@ public class ServiceBrowser {
     
     Object[] getServicesList(){
         Object[] services = null;
+        Object obj = null;
         
-        try{
-            ServiceServer server = (ServiceServer) Naming.lookup("rmi://127.0.0.1/ServiceServer"); //should change IP if it is located in another computer?
+        try {
+            server = (ServiceServer) Naming.lookup("rmi://127.0.0.1/ServiceServer");
             services = server.getServiceList();
-            
-        }
-        catch(Exception ex){
+        
+        } catch(Exception ex) {
             ex.printStackTrace();
         }
         return services;
-    }   
-    
+        }
+  
     class MyListListener implements ActionListener{
         public void actionPerformed(ActionEvent e){
             Object selection = serviceList.getSelectedItem();

@@ -5,6 +5,7 @@
  */
 package serviceserver;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Serializable;
@@ -21,9 +22,12 @@ class DiceService implements Service{
     
     JLabel label;
     JComboBox numOfDice;
+    Font bigFont = new Font("Comic Sans", Font.BOLD, 30);
+
     
     public JPanel getGuiPanel(){
         JPanel panel = new JPanel();
+        panel.setFont(bigFont);
         JButton button = new JButton("Roll 'em!");
         String[] choices = {"1", "2", "3", "4", "5"};
         numOfDice = new JComboBox(choices);

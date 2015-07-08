@@ -5,6 +5,7 @@
  */
 package serviceserver;
 
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,10 +30,13 @@ class DayOfTheWeekService implements Service{
     JComboBox month;
     JTextField day;
     JTextField year;
+    Font bigFont = new Font("Comic Sans", Font.BOLD, 30);
     
     public JPanel getGuiPanel(){
         JPanel panel = new JPanel();
+        panel.setFont(bigFont);
         JButton button = new JButton("Do it!");
+        button.setFont(bigFont);
         button.addActionListener(new DoItListener());
         outputLabel = new JLabel("data appears here");
         DateFormatSymbols dateStuff = new DateFormatSymbols();
