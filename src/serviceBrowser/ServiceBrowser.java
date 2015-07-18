@@ -51,7 +51,7 @@ public class ServiceBrowser {
         serviceList.addActionListener(new MyListListener());
         
 
-        frame.setSize(1000, 1500);
+        frame.setSize(1000, 500);
         frame.setVisible(true);
     }
     
