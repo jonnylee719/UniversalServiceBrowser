@@ -39,17 +39,27 @@ class DayOfTheWeekService implements Service{
         button.setFont(bigFont);
         button.addActionListener(new DoItListener());
         outputLabel = new JLabel("data appears here");
+        outputLabel.setFont(bigFont);
         DateFormatSymbols dateStuff = new DateFormatSymbols();
         month = new JComboBox(dateStuff.getMonths());
+        month.setFont(bigFont);
         day = new JTextField(8);
+        day.setFont(bigFont);
         year = new JTextField(8);
+        year.setFont(bigFont);
         
         JPanel inputPanel = new JPanel(new GridLayout(3,2));
-        inputPanel.add(new JLabel("Month"));
+        JLabel mLabel = new JLabel("Month");
+        mLabel.setFont(bigFont);
+        inputPanel.add(mLabel);
         inputPanel.add(month);
-        inputPanel.add(new JLabel("Day"));
+        JLabel dLabel = new JLabel("Day");
+        dLabel.setFont(bigFont);
+        inputPanel.add(dLabel);
         inputPanel.add(day);
-        inputPanel.add(new JLabel("Year"));
+        JLabel yLabel = new JLabel("Year");
+        yLabel.setFont(bigFont);
+        inputPanel.add(yLabel);
         inputPanel.add(year);
         
         panel.add(inputPanel);
